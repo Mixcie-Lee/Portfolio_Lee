@@ -140,7 +140,7 @@
       background: var(--cream);
       display: flex; align-items: center; justify-content: center;
       font-family: var(--font-display);
-      font-size: 5rem;
+      font-size: 3rem;
       color: var(--accent);
       font-style: italic;
     }
@@ -156,8 +156,8 @@
       animation: floatUp 3s ease-in-out infinite;
     }
     .float-badge.one { bottom: 20px; left: -30px; color: var(--dark); animation-delay: 0s; }
-    .float-badge.two { top: 40px; right: -20px; color: var(--dark); animation-delay: 1s; }
-    .float-badge.three { top: 140px; left: -50px; color: var(--dark); animation-delay: 2s; }
+    .float-badge.two { top: 40px; left: -20px; color: var(--dark); animation-delay: 1s; }
+    .float-badge.three { top: 170px; right: -50px; color: var(--dark); animation-delay: 2s; }
     @keyframes floatUp {
       0%,100% { transform: translateY(0); }
       50%      { transform: translateY(-8px); }
@@ -187,16 +187,37 @@
     }
 
     /* ── ABOUT ── */
-    #about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      background: var(--lavender);
-      border-radius: 32px;
-      margin: 0 2rem;
-      padding: 5rem;
-    }
+
+#about {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+  background: var(--lavender);
+  border-radius: 32px;
+  margin: 0 2rem;
+  padding: 5rem;
+}
+.about-left { display: flex; flex-direction: column; }
+.about-photo {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-photo img {
+  width: auto;
+  height: 620px;
+  object-fit: cover;
+  object-position: center center;
+  border-radius: 24px;
+  border: 4px solid #fff;
+  box-shadow: 0 12px 40px rgba(30,27,46,0.12);
+  display: block;
+  scale: 110%;
+
+}
     .about-tags { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.6rem; }
     .tag {
       font-size: 0.8rem;
@@ -278,6 +299,24 @@
     }
     .project-body p { font-size: 0.875rem; color: var(--muted); margin-bottom: 1rem; }
     .project-link {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .project-coming {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--dark);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .project-coming {
       font-size: 0.82rem;
       font-weight: 500;
       color: var(--dark);
@@ -380,7 +419,7 @@
 
   <!-- NAV -->
   <nav>
-    <a class="nav-logo" href="#">Your Name</a>
+    <a class="nav-logo" href="#">Mikaella Zabrina Anne Lee</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -393,9 +432,9 @@
   <section id="hero">
     <div class="hero-text fade-in">
       <span class="hero-eyebrow">✦ Available for opportunities</span>
-      <h1>Hi, I'm <em>Your Name</em> — a curious creator.</h1>
+      <h1>Hi, I'm <em>Mikaella Zabrina Anne Lee</em> — a technology enthusiast.</h1>
       <p>
-        Fresh high school grad heading to college. I build things, write about them, and figure out the rest as I go. Welcome to my corner of the internet.
+        Student, athlete, and developer driven by curiosity, discipline, and continuous growth. Whether on the ice or behind a computer, I strive to learn, lead, and make a positive impact.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">See My Work</a>
@@ -404,8 +443,8 @@
     </div>
     <div class="hero-visual">
       <div class="avatar-ring">
-        <div class="avatar-inner">YN</div>
-        <div class="float-badge one">🎓 Class of 2025</div>
+        <div class="avatar-inner">Mikaella <br> Lee</div>
+        <div class="float-badge one">🎓 Class of 2026</div>
         <div class="float-badge two">💡 Always Learning</div>
         <div class="float-badge three">🚀 Building Things</div>
       </div>
@@ -414,43 +453,34 @@
 
   <!-- ABOUT -->
   <section id="about">
-    <div class="fade-in">
-      <p class="section-label">About Me</p>
-      <h2 class="section-title">A little about<br><em style="font-family:var(--font-display);font-style:italic;color:#7A5DC7">who I am.</em></h2>
-      <p style="color: var(--dark); font-size: 1rem; line-height: 1.75; margin-bottom: 1rem;">
-        I'm a recent high school graduate with a love for [your passion]. I'm heading to [College Name] to study [your major], but I believe learning never waits for school to start.
-      </p>
-      <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.75;">
-        When I'm not building projects or writing, you'll find me [hobby 1], [hobby 2], or overthinking big ideas with good coffee.
-      </p>
-      <div class="about-tags">
-        <span class="tag tag-lavender">✏️ Writing</span>
-        <span class="tag tag-pink">🎨 Design</span>
-        <span class="tag tag-mint">💻 Coding</span>
-        <span class="tag tag-sky">📚 Reading</span>
-        <span class="tag tag-peach">🎵 Music</span>
-      </div>
+  <div class="about-left fade-in">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">A little about<br><em style="font-family:var(--font-display);font-style:italic;color:#7A5DC7">who I am.</em></h2>
+    <p style="color: var(--dark); font-size: 1rem; line-height: 1.75; margin-bottom: 1rem;">
+      I'm a high school student with a passion for technology, innovation, and creating solutions through code. As an aspiring Computer Science student, I'm constantly learning and building projects that challenge me to grow.
+    </p>
+    <p style="color: var(--muted); font-size: 0.95rem; line-height: 1.75;">
+      When I'm not coding, you'll find me training with the Philippine national ice hockey team, exploring new ideas, or enjoying a good cup of coffee while planning my next project.
+    </p>
+    <div class="about-tags">
+      <span class="tag tag-lavender">💻 Coding</span>
+      <span class="tag tag-pink">🧩 Problem Solving</span>
+      <span class="tag tag-sky">🏒 Ice Hockey</span>
+      <span class="tag tag-mint">🌱 Leadership</span>
+      <span class="tag tag-peach">🚀 Innovation</span>
     </div>
+    <div class="stats-grid" style="margin-top: 2rem;">
+      <div class="stat-card"><div class="num">5+</div><div class="label">Projects completed</div></div>
+      <div class="stat-card"><div class="num">3+</div><div class="label">Blog posts published</div></div>
+      <div class="stat-card"><div class="num">18</div><div class="label">Years of curiosity</div></div>
+      <div class="stat-card"><div class="num">∞</div><div class="label">Things to still learn</div></div>
+    </div>
+  </div>
 
-    <div class="stats-grid fade-in">
-      <div class="stat-card">
-        <div class="num">5+</div>
-        <div class="label">Projects completed</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">3+</div>
-        <div class="label">Blog posts published</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">18</div>
-        <div class="label">Years of curiosity</div>
-      </div>
-      <div class="stat-card">
-        <div class="num">∞</div>
-        <div class="label">Things to still learn</div>
-      </div>
-    </div>
-  </section>
+  <div class="about-photo fade-in">
+    <img src="src/seag.jpg" alt="Mikaella Lee" />
+  </div>
+</section>
 
   <!-- PROJECTS -->
   <section id="projects">
@@ -462,9 +492,10 @@
       <div class="project-card fade-in">
         <div class="project-thumb thumb-pink">🌸</div>
         <div class="project-body">
-          <p class="project-chip">Web</p>
-          <h3>Project One</h3>
-          <p>A short description of what this project does and why you built it. Keep it real and human.</p>
+          <p class="project-chip">Mobile Application</p>
+          <h3>PawMate</h3>
+          <p> A pet adoption platform designed to connect shelters and adopters through a simple, accessible, and user-friendly experience. PawMate helps users discover pets, learn about responsible adoption, and find their perfect companion.
+  </p></p>
           <a class="project-link" href="#">View Project</a>
         </div>
       </div>
@@ -472,20 +503,21 @@
       <div class="project-card fade-in">
         <div class="project-thumb thumb-mint">🌿</div>
         <div class="project-body">
-          <p class="project-chip">Design</p>
-          <h3>Project Two</h3>
-          <p>A short description of what this project does and why you built it. Keep it real and human.</p>
-          <a class="project-link" href="#">View Project</a>
+          <p class="project-chip">Web Development</p>
+          <h3>In Development</h3>
+          <p>I'm currently working on a website revamp project that will be added here as they are completed.</p>
+  
+           <p class="project-coming">Coming Soon...</p>
         </div>
       </div>
 
       <div class="project-card fade-in">
         <div class="project-thumb thumb-sky">💙</div>
         <div class="project-body">
-          <p class="project-chip">Writing</p>
-          <h3>Project Three</h3>
-          <p>A short description of what this project does and why you built it. Keep it real and human.</p>
-          <a class="project-link" href="#">View Project</a>
+          <p class="project-chip">More projects coming soon</p>
+          <h3>Future Project</h3>
+          <p>Still looking for the perfect idea to bring to life!</p>
+           <p class="project-coming">Coming Soon...</p>
         </div>
       </div>
     </div>
@@ -500,20 +532,20 @@
     <div class="blog-grid">
       <div class="blog-card fade-in">
         <p class="blog-date">June 2025</p>
-        <h3>What I Wish I Knew Before Graduating High School</h3>
-        <p>A few honest things I'd tell my younger self — and maybe some advice for you too.</p>
+        <h3>Representing the Philippines in Ice Hockey</h3>
+        <p>My journey as a national athlete, the lessons I learned, and what it means to wear the Philippine jersey on the international stage.</p>
         <a class="read-more" href="#">Read more →</a>
       </div>
       <div class="blog-card fade-in">
         <p class="blog-date">May 2025</p>
-        <h3>Why I Started Building Things Before College</h3>
-        <p>You don't need a degree to start. Here's what I've learned from just shipping stuff.</p>
+        <h3>Why I Chose Software Development</h3>
+        <p>How my passion for technology began and why I enjoy building solutions that solve real-world problems.</p>
         <a class="read-more" href="#">Read more →</a>
       </div>
       <div class="blog-card fade-in">
         <p class="blog-date">April 2025</p>
-        <h3>The First Project I Was Proud Of</h3>
-        <p>It wasn't perfect. It was barely functional. But it was mine, and that meant everything.</p>
+        <h3>Balancing School, Leadership, and Sports</h3>
+        <p>Managing academics, student leadership, and competitive sports while staying focused on my goals.</p>
         <a class="read-more" href="#">Read more →</a>
       </div>
     </div>
@@ -525,15 +557,15 @@
     <h2 class="section-title fade-in">Let's Connect</h2>
     <p class="fade-in">Whether you want to collaborate, chat about ideas, or just say hi — my inbox is always open.</p>
     <div class="contact-links fade-in">
-      <a href="mailto:you@email.com" class="contact-btn filled">✉ Email Me</a>
-      <a href="https://linkedin.com" class="contact-btn">LinkedIn</a>
-      <a href="https://github.com" class="contact-btn">GitHub</a>
-      <a href="https://twitter.com" class="contact-btn">Twitter / X</a>
+      <a href="mailto:leegoalie89@email.com" class="contact-btn filled">✉ Email Me</a>
+      <a href="https://www.linkedin.com/in/mikaella-lee/" class="contact-btn">LinkedIn</a>
+      <a href="https://github.com/Mixcie-Lee" class="contact-btn">GitHub</a>
+      <a href="https://x.com/MixcieWeb3" class="contact-btn">Twitter / X</a>
     </div>
   </section>
 
   <footer>
-    <p>Made with care by <strong>Your Name</strong> · 2025</p>
+    <p>Made with care by <strong>Mikaella Lee</strong> · 2026</p>
   </footer>
 
   <script>
